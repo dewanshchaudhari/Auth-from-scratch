@@ -96,10 +96,11 @@ export default {
             });
           })
           .then((result) => {
+            localStorage.token = result.token;
             setTimeout(() => {
               this.logginIn = false;
               console.log(result);
-              // this.$router.push("/dashboard");
+              this.$router.push("/dashboard");
             }, 1000);
           })
           .catch((error) => {
